@@ -1,0 +1,37 @@
+body{
+  background-image: url("https://i.imgur.com/xThPhG7.jpg");
+
+}
+
+#card{
+  display:flex;
+  justify-content: space-between;
+  border: 1px solid rgb(65, 63, 63);
+  margin: 25px;
+  padding:20px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 3px 1px #5a5959;
+}
+
+#media-info{
+ margin-left:20px;
+}
+
+#image-text{
+  display:flex;
+}
+
+#suggested{
+  margin-left:25px;
+
+}
+
+#add-btn button{
+  width:120px;
+  height:30px;
+  font-size: 15px;
+  background-color: green;
+  color:white;
+  border-radius:10px;
+  
+}

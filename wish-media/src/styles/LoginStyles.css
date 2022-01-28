@@ -1,0 +1,133 @@
+/* 
+body{
+  background-image: url("https://i.imgur.com/xThPhG7.jpg");
+
+} */
+
+html {
+height:100.1%;
+max-width: 100%;
+overflow-x: hidden;
+}
+
+
+
+
+
+
+input{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 10px 0;
+  display: block;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  justify-content: space-evenly;
+  }
+
+
+
+ #signup-page{
+   display: flex;
+    justify-content: space-between;
+   margin-top: 50px;
+   margin-bottom: 50px;
+ }
+
+ #login-page{
+     display: flex;
+    justify-content: space-between;
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+ }
+
+ 
+#signup-form{
+  border: 1px solid rgb(160, 155, 155);
+  background-color: rgb(241, 238, 238);
+  width:45%;
+  padding-top: 70px !important;
+  padding-bottom: 200px !important;
+  margin-left: 30px;
+  padding: 30px;
+  border-radius: 5px;
+  height:350px;
+  box-shadow: 3px 3px 6px 3px #5a5959;
+
+} 
+
+#login-form{
+   border: 1px solid rgb(160, 155, 155);
+  background-color: rgb(241, 238, 238);
+  width:45%;
+  padding-top: 70px !important;
+  padding-bottom: 100px !important;
+  margin-left: 30px;
+  padding: 30px;
+  border-radius: 5px;
+  height:350px;
+  box-shadow: 3px 3px 6px 3px #5a5959;
+
+}
+
+.form-header{
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+#user-msg{
+  width: 100%;
+  height: 180px;
+  padding: 12px 17px;
+  margin: 10px 0;
+  display: block;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  justify-content: space-evenly;
+  font-size: 14px;
+  font-family:'Poppins', sans-serif;
+  resize: none;
+}
+
+.form-btn{
+  background-color: rgb(191, 138, 241);
+  color:white;
+  width: 100px;
+  height:40px;
+  font-size: 20px;
+  border-radius: 5px;
+  display: block;
+  float: right;
+  margin-top: 30px;
+  border: snow;
+  cursor: pointer;
+
+  /* box-shadow: 3px 3px 6px 3px #5a5959; */
+  
+}
+
+
+
+.send-btn{
+  background-color: rgb(191, 138, 241);
+  color:white;
+  width: 100px;
+  height:40px;
+  font-size: 20px;
+  border-radius: 5px;
+  display: block;
+  float: right;
+  border: snow;
+  cursor: pointer;
+
+} 
+
+#image img{
+  width:600px;
+  height: auto;
+  margin-right: 50px;
+}
+

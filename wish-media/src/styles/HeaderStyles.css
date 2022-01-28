@@ -1,0 +1,53 @@
+
+#header{
+  background-color: rgb(191, 138, 241);
+  color:white;
+  font-family:sans-serif;
+   display: flex;
+  justify-content: space-between;
+  padding:20px;
+  
+}
+
+
+#logged-user{
+  display: flex;
+  width: 50px;
+}
+
+
+
+#logo{
+  display: flex;
+  justify-content: left;
+}
+
+#header img{
+  width:250px;
+  height:50px;
+  padding:0px;
+}
+
+a{
+  text-decoration: none;
+  color:white;
+  cursor:pointer;
+  margin:10px;
+  font-size: 20px;
+  
+}
+
+a:hover{
+ color:black; 
+}
+
+a:focus{
+ color:black; 
+ text-decoration: underline;
+}
+
+#navlinks{
+  margin-top: 15px;
+  font-weight: 20px;
+}
+

@@ -1,0 +1,19 @@
+body{
+  overflow-x: hidden;
+}
+
+#footer{
+  text-align: center;
+  width:100%;
+  margin-top:10px;
+  color:white;
+  
+}
+
+
+#container{
+  position:absolute;
+  height:0px;
+  background-color: rgb(191, 138, 241);
+  width:100%
+}
