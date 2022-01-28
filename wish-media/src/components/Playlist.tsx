@@ -15,7 +15,7 @@ const Playlist = (props: Props) => {
 
     const [playlists, setPlaylists] = useState<any[]>([])
     const [userId, setUserId] = useState<Number>();
-    const [playlistId, setPlaylistId] = useState<Number>()
+    const [tracks, setTracks] = useState<any[]>([])
 
     async function fetchPlaylists() {
         const userId = loggedInUser.id
@@ -32,10 +32,12 @@ const Playlist = (props: Props) => {
         const baseUrl = "https://wishmedia.herokuapp.com"
         const results = await axios.get(`${baseUrl}/playlist/${playlist_id}`)
         console.log(results, "results")
-        setPlaylists(results.data)
+        setTracks(results.data)
+
 
 
     }
+
 
 
     useEffect(() => {
@@ -49,24 +51,52 @@ const Playlist = (props: Props) => {
     return (
         <>
             <div id="playlist-header">
-                <h1>{loggedInUser.username}'s Playlist</h1>
+                <h1>{loggedInUser.username}'s Playlists</h1>
             </div>
+            <div id="contain">
             <div id="playlists">
-            {
-                playlists.map((playlist, index) => {
-                    return (
-                        <>
-                            <div id="playlist-card">
-                            <h1>{playlist.playlist_name}</h1>
-                            <button onClick={() => fetchTracks(playlist.id)}>View</button>
-                            </div>
-                        </>
+              
+                {
+                    playlists.map((playlist, index) => {
+                        return (
+                            <>
+                                <div id="playlist-card" onClick={() => fetchTracks(playlist.id)}>
+                                 {playlist.playlist_name}
+                                  
+                                    {/* <h1>{playlist.playlist_name}</h1> */}
+                                {/* <button onClick={() => fetchTracks(playlist.id)}>View</button> */}
+                                </div>
 
-                    )
-                })
-            }
+                            </>
+
+                        )
+                    })
+                    }
+                    </div>
+                   <div id="tracklist">
+
+                {
+                    tracks.map((track, index) => {
+                        return (
+                            <>
+                                <div id="track-card">
+                                    <div id="track-info">
+                                        <h3>{track.artist_name}</h3>
+                                        {/* <p>{track}</p> */}
+                                        <img src={track.track_image_url} alt="track image" />
+                                        <p>{track.track_name}</p>
+                                    </div>
+                                </div>
+
+
+                            </>
+                        )
+                    })
+                }
+                </div>
 
             </div>
+           
         </>
 
     )

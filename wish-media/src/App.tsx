@@ -5,6 +5,7 @@ import Login from './components/Login';
 import Playlist from './components/Playlist';
 import SignUp from './components/SignUp';
 import MediaList from './components/MediaList';
+import TrackList from './components/TrackList';
 import Search from './components/Search';
 import { useEffect, useState } from 'react';
 
@@ -16,7 +17,7 @@ function App() {
   const [media, setMedia] = useState<[]>([]);
   const [keyword, setKeyword] = useState("");
   const [loggedInUser, setLoggedInUser] = useState<any>({});
-
+  const [tracks, setTracks] = useState<any[]>([]);
 
   
   return (
