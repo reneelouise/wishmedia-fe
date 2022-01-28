@@ -1,0 +1,21 @@
+#playlist-header h1{
+  text-align: center;
+}
+
+#playlist-card{
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+  border: 1px solid black;
+  border-radius:25px;
+  background-color: rgb(241, 238, 238);
+  box-shadow: 3px 3px 6px 3px #5a5959;
+  padding:30px;
+}
+
+#playlist-card button{
+  width: 70px;
+  height:30px;
+  margin-top: 30px;
+  margin-left: 20px;
+}

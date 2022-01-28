@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/LoginStyles.css';
 
 interface Props {
@@ -13,6 +14,8 @@ const Login = (props: Props) => {
     const [password, setPassword] = useState("")
     const [users, setUsers] = useState([])
 
+     const history = useNavigate()
+
 
     const fetchUsers = async () => {
         const baseUrl = "https://wishmedia.herokuapp.com"
@@ -23,7 +26,7 @@ const Login = (props: Props) => {
 
 
 
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    const login = async (e: React.FormEvent<HTMLFormElement>) => {
 
         e.preventDefault()
 
@@ -36,10 +39,12 @@ const Login = (props: Props) => {
 
         })
 
+       
         if (user) {
             localStorage.removeItem("user")
             setLoggedInUser(user)
             localStorage.setItem("user", JSON.stringify(user))
+            history("/playlist");
         } else {
             alert("invalid user!")
         }
@@ -64,7 +69,7 @@ const Login = (props: Props) => {
                 <div id="login-form">
                     <h1 className="form-header">Sign In</h1>
                     <p>Sign in to manage your playlists 🎵</p>
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={login}>
 
                         <input placeholder="Username" type="text" onChange={(e) => setUsername(e.target.value)} />
                         <input placeholder="Password" type="password" onChange={(e) => setPassword(e.target.value)} />
@@ -85,5 +90,4 @@ const Login = (props: Props) => {
 
     );
 }
-
 export default Login;
