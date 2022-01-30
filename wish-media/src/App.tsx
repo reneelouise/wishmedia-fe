@@ -6,7 +6,7 @@ import Playlist from './components/Playlist';
 import SignUp from './components/SignUp';
 import MediaList from './components/MediaList';
 import Search from './components/Search';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 
 
@@ -16,7 +16,6 @@ function App() {
   const [media, setMedia] = useState<[]>([]);
   const [keyword, setKeyword] = useState("");
   const [loggedInUser, setLoggedInUser] = useState<any>({});
-
 
   
   return (
@@ -57,7 +56,7 @@ function App() {
           <Route path="/playlist" element=
             {<>
               <Header setLoggedInUser={setLoggedInUser} loggedInUser={loggedInUser} />
-              <Playlist setLoggedInUser={setLoggedInUser} loggedInUser={loggedInUser} />
+              <Playlist loggedInUser={loggedInUser} />
               <Footer />
             </>
             }
