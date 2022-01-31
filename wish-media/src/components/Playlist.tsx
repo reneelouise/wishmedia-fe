@@ -9,12 +9,14 @@ interface Props {
 }
 
 const Playlist = (props: Props) => {
-    const { loggedInUser} = props;
+    const { loggedInUser } = props;
 
 
 
     const [playlists, setPlaylists] = useState<any[]>([])
     const [tracks, setTracks] = useState<any[]>([])
+
+    const [selectedPlaylist, setSelectedPlaylist] = useState<number | null>(null)
 
     const fetchPlaylists = async () => {
         const userId = loggedInUser.id
@@ -27,21 +29,39 @@ const Playlist = (props: Props) => {
     }
 
     const fetchTracks = async (playlist_id: number) => {
+        setSelectedPlaylist(playlist_id)
+        console.log(selectedPlaylist)
 
         const baseUrl = "https://wishmedia.herokuapp.com"
         const results = await axios.get(`${baseUrl}/playlist/${playlist_id}`)
         console.log(results, "results")
+
         setTracks(results.data)
+
 
     }
 
-    // const deleteTrack = async (playlist_id: number, track_id: number) => {
-    //     const baseUrl = "https://wishmedia.herokuapp.com"
-    //     const results = await axios.delete(`${baseUrl}/playlist/${playlist_id}/${track_id}`)
-    //     console.log(results, "results with deleted track")
-    //     setTracks(results.data)
+    // const removeTrack = (track_id: number) => {
+
 
     // }
+
+    const deleteTrack = async (track_id: number) => {
+
+        try {
+            const baseUrl = "https://wishmedia.herokuapp.com"
+            await axios.delete(`${baseUrl}/playlist/${selectedPlaylist}/${track_id}`)
+            
+        }
+        catch (error) {
+            console.error(error)
+
+        }
+
+    }
+
+
+
 
 
     useEffect(() => {
@@ -80,7 +100,7 @@ const Playlist = (props: Props) => {
 
                     {
                         tracks.map((track, index) => {
-                            
+
                             return (
                                 <>
                                     <div id="track-card">
@@ -88,8 +108,8 @@ const Playlist = (props: Props) => {
                                             <h3>{track.artist_name}</h3>
                                             <img src={track.track_image_url} alt="track" />
                                             <p>{track.track_name}</p>
-                                           
-                                            
+                                            <button onClick={() => deleteTrack(track.id)}>Remove</button>
+
                                         </div>
                                     </div>
                                 </>

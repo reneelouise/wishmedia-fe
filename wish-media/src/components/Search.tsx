@@ -12,13 +12,19 @@ const Search = (props: Props) => {
     const { setMedia, keyword, setKeyword } = props;
 
     async function fetchInitialData() {
-        const url = `https://itunes.apple.com/search?term=orange`;
-        const result = await fetch(url).then(res => res.json());
-        console.log(result);
-        setMedia(result.results);
+        try {
+            const url = `https://itunes.apple.com/search?term=wish`;
+            const result = await fetch(url).then(res => res.json())
+                console.log(result);
+                setMedia(result.results);
+        } catch (error) {
+            console.error(error)
+
+        }
+
     }
 
-    // const randomKeyword=['avril', 'orange', 'hello', 'adele' ]
+
 
     async function fetchData(event: any) {
         event.preventDefault();
@@ -28,7 +34,7 @@ const Search = (props: Props) => {
             console.log(result);
             setMedia(result.results);
         } else {
-            const url = `https://itunes.apple.com/search?term=avril`;
+            const url = `https://itunes.apple.com/search?term=wish`;
             const result = await fetch(url).then(res => res.json());
             console.log(result);
             setMedia(result.results);
